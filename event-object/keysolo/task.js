@@ -16,7 +16,7 @@ class Game {
     this.lossElement.textContent = 0;
   }
 
-  registerEvents() {
+  registerEvents(event) {
     /*
       TODO:
       Написать обработчик события, который откликается
@@ -25,6 +25,18 @@ class Game {
       При неправильном вводе символа - this.fail();
       DOM-элемент текущего символа находится в свойстве this.currentSymbol.
      */
+    document.addEventListener("keyup", event => {
+      if(event.key == 'Shift') {
+        return false;
+      }
+
+      if(event.key == this.currentSymbol.textContent || event.key.toLowerCase() == this.currentSymbol.textContent) {
+        this.success();
+      } else {
+        this.fail();
+      }
+    });
+    
   }
 
   success() {
