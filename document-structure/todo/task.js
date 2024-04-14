@@ -21,9 +21,6 @@ class TodoList {
         }
     }
 
-    
-
-
     generateElement(textValue) {
         const newElem = document.createElement("div");
         const title = document.createElement("div");
