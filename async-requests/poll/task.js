@@ -23,7 +23,7 @@ function sendAnswer(event) {
 
         if(data?.stat) {
             const allVoites = data.stat.reduce((acc, elem) => { return acc += elem.votes}, 0);
-
+            alert("Спасибо, ваш голос засчитан!");
             resultListWrap.innerHTML = "";
             data.stat.forEach((value) => resultListWrap.insertAdjacentHTML(
                 "beforeend", 
